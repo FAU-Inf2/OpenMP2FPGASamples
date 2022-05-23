@@ -34,7 +34,7 @@ void OutlinedFunction0(size_t OrkaParam0,size_t OrkaParam1,int *OrkaParam2,doubl
         double c_imag = param_pack_temp_variable3[i + param_pack_temp_variable0];
         for (size_t iter = (size_t )0; iter < param_pack_temp_variable1; iter++) {
           
-#pragma HLS PIPELINE II=21 enable_flush rewind
+#pragma HLS PIPELINE II=21  rewind
           double new_real = result_real * result_real - result_imag * result_imag + c_real;
           double new_imag = result_real * result_imag * ((double )2) + c_imag;
           double abs = new_real * new_real + new_imag * new_imag;

@@ -24,10 +24,10 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
 #pragma HLS INLINE REGION
   for (int x = 0; x < N; x++) {
     
-#pragma HLS PIPELINE II=1 enable_flush rewind
+#pragma HLS PIPELINE II=1  rewind
     for (int y = 0; y < N; y++) {
       
-#pragma HLS PIPELINE II=17 enable_flush
+#pragma HLS PIPELINE II=17 
       double weightsum = (double )0;
       double sum = (double )0;
       for (int i = 0; i < M; i++) {
@@ -35,7 +35,7 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
 #pragma HLS UNROLL factor=1
         for (int j = 0; j < M; j++) {
           
-#pragma HLS PIPELINE II=18 enable_flush rewind
+#pragma HLS PIPELINE II=18  rewind
           double weight = kernel[linearize(i,j,M,M)];
           int target = linearize(x + i,y + j,N,N);
           if (target < 0) 

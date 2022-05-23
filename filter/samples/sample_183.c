@@ -35,7 +35,7 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
 #pragma UNEXPRESSED
         for (int j = 0; j < M; j++) {
           
-#pragma HLS PIPELINE II=2 enable_flush
+#pragma HLS PIPELINE II=2 
           double weight = kernel[linearize(i,j,M,M)];
           int target = linearize(x + i,y + j,N,N);
           if (target < 0) 

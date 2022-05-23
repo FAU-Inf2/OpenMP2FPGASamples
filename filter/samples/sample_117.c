@@ -24,7 +24,7 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
 #pragma HLS INLINE REGION
   for (int x = 0; x < N; x++) {
     
-#pragma HLS PIPELINE II=18 enable_flush rewind
+#pragma HLS PIPELINE II=18  rewind
     for (int y = 0; y < N; y++) {
       
 #pragma UNEXPRESSED

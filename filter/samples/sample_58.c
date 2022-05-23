@@ -12,7 +12,7 @@ int data_cache_hits = 0;
 int linearize(int x,int y,int bndx,int bndy)
 {
   
-#pragma HLS INLINE RECURSIVE
+#pragma HLS INLINE
   if (x >= bndx || y >= bndy) 
     return - 1;
   return bndy * x + y;

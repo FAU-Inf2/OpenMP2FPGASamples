@@ -32,7 +32,7 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
       double sum = (double )0;
       for (int i = 0; i < M; i++) {
         
-#pragma HLS PIPELINE II=15 enable_flush
+#pragma HLS PIPELINE II=15 
         for (int j = 0; j < M; j++) {
           
 #pragma UNEXPRESSED
@@ -52,7 +52,7 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
 void OutlinedFunction0(int OrkaParam0,int OrkaParam1,double *OrkaParam2,double *OrkaParam3,double *OrkaParam4)
 {
   
-#pragma HLS INLINE RECURSIVE
+#pragma HLS INLINE
 ;
   int param_pack_temp_variable0 = (int )OrkaParam0;
   int param_pack_temp_variable1 = (int )OrkaParam1;

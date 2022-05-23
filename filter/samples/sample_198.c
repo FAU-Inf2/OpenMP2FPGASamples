@@ -35,7 +35,7 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
 #pragma UNEXPRESSED
         for (int j = 0; j < M; j++) {
           
-#pragma HLS PIPELINE II=24 enable_flush
+#pragma HLS PIPELINE II=24 
           double weight = kernel[linearize(i,j,M,M)];
           int target = linearize(x + i,y + j,N,N);
           if (target < 0) 
@@ -52,7 +52,7 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
 void OutlinedFunction0(int OrkaParam0,int OrkaParam1,double *OrkaParam2,double *OrkaParam3,double *OrkaParam4)
 {
   
-#pragma HLS INLINE RECURSIVE
+#pragma HLS INLINE
 ;
   int param_pack_temp_variable0 = (int )OrkaParam0;
   int param_pack_temp_variable1 = (int )OrkaParam1;

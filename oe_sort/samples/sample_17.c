@@ -48,7 +48,7 @@ void sort(int *array)
 void OutlinedFunction0(int *OrkaParam0)
 {
   
-#pragma HLS INLINE RECURSIVE
+#pragma HLS INLINE
 ;
   int *param_pack_temp_variable0 = (int *)OrkaParam0;
 {

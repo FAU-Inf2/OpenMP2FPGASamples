@@ -26,7 +26,7 @@ void OutlinedFunction0(size_t OrkaParam0,size_t OrkaParam1,int *OrkaParam2,doubl
 {
       for (size_t i = (size_t )0; i < param_pack_temp_variable0; i++) {
         
-#pragma HLS PIPELINE II=2 enable_flush
+#pragma HLS PIPELINE II=2 
         param_pack_temp_variable2[i] = - 1;
         double result_real = (double )0;
         double result_imag = (double )0;

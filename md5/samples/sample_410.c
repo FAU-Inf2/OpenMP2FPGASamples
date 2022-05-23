@@ -87,7 +87,7 @@ void md5(uint8_t *initial_msg,size_t initial_len,uint32_t *h0,uint32_t *h1,uint3
 void OutlinedFunction0(char *OrkaParam0,size_t OrkaParam1,uint32_t (*OrkaParam2)[1020])
 {
   
-#pragma HLS INLINE RECURSIVE
+#pragma HLS INLINE
 ;
   char *param_pack_temp_variable0 = (char *)OrkaParam0;
   size_t param_pack_temp_variable1 = (size_t )OrkaParam1;

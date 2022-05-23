@@ -16,7 +16,7 @@ static struct cmdline data = {.res_x = (uint32_t )500, .res_y = (uint32_t )500, 
 void OutlinedFunction0(size_t OrkaParam0,size_t OrkaParam1,int *OrkaParam2,double *OrkaParam3)
 {
   
-#pragma HLS INLINE RECURSIVE
+#pragma HLS INLINE
 ;
   size_t param_pack_temp_variable0 = (size_t )OrkaParam0;
   size_t param_pack_temp_variable1 = (size_t )OrkaParam1;

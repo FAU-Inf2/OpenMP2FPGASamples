@@ -21,13 +21,13 @@ int linearize(int x,int y,int bndx,int bndy)
 void apply_filter(double *kernel,double *data,double *result,const int N,const int M)
 {
   
-#pragma HLS INLINE RECURSIVE
+#pragma HLS INLINE
   for (int x = 0; x < N; x++) {
     
 #pragma HLS UNROLL factor=1
     for (int y = 0; y < N; y++) {
       
-#pragma HLS PIPELINE II=20 enable_flush
+#pragma HLS PIPELINE II=20 
       double weightsum = (double )0;
       double sum = (double )0;
       for (int i = 0; i < M; i++) {

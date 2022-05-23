@@ -21,7 +21,7 @@ int linearize(int x,int y,int bndx,int bndy)
 void apply_filter(double *kernel,double *data,double *result,const int N,const int M)
 {
   
-#pragma HLS INLINE RECURSIVE
+#pragma HLS INLINE
   for (int x = 0; x < N; x++) {
     
 #pragma HLS UNROLL factor=3
@@ -32,7 +32,7 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
       double sum = (double )0;
       for (int i = 0; i < M; i++) {
         
-#pragma HLS PIPELINE II=14 enable_flush rewind
+#pragma HLS PIPELINE II=14  rewind
         for (int j = 0; j < M; j++) {
           
 #pragma UNEXPRESSED

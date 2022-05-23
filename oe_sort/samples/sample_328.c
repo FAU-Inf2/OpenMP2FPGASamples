@@ -9,7 +9,7 @@
 void mov_dat(int *from,int *to)
 {
   
-#pragma HLS INLINE RECURSIVE
+#pragma HLS INLINE
   for (int i = 0; i < 10000; i++) {
     
 #pragma HLS UNROLL factor=1021

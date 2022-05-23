@@ -21,7 +21,7 @@ int linearize(int x,int y,int bndx,int bndy)
 void apply_filter(double *kernel,double *data,double *result,const int N,const int M)
 {
   
-#pragma HLS INLINE RECURSIVE
+#pragma HLS INLINE
   for (int x = 0; x < N; x++) {
     
 #pragma UNEXPRESSED
@@ -35,7 +35,7 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
 #pragma UNEXPRESSED
         for (int j = 0; j < M; j++) {
           
-#pragma HLS PIPELINE II=25 enable_flush
+#pragma HLS PIPELINE II=25 
           double weight = kernel[linearize(i,j,M,M)];
           int target = linearize(x + i,y + j,N,N);
           if (target < 0) 

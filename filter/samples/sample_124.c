@@ -24,7 +24,7 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
 #pragma UNEXPRESSED
   for (int x = 0; x < N; x++) {
     
-#pragma HLS PIPELINE II=13 enable_flush rewind
+#pragma HLS PIPELINE II=13  rewind
     for (int y = 0; y < N; y++) {
       
 #pragma HLS PIPELINE II=10  rewind
@@ -32,7 +32,7 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
       double sum = (double )0;
       for (int i = 0; i < M; i++) {
         
-#pragma HLS PIPELINE II=14 enable_flush
+#pragma HLS PIPELINE II=14 
         for (int j = 0; j < M; j++) {
           
 #pragma UNEXPRESSED

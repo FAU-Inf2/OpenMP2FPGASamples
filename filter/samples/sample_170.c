@@ -27,12 +27,12 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
 #pragma UNEXPRESSED
     for (int y = 0; y < N; y++) {
       
-#pragma HLS PIPELINE II=17 enable_flush rewind
+#pragma HLS PIPELINE II=17  rewind
       double weightsum = (double )0;
       double sum = (double )0;
       for (int i = 0; i < M; i++) {
         
-#pragma HLS PIPELINE II=14 enable_flush
+#pragma HLS PIPELINE II=14 
         for (int j = 0; j < M; j++) {
           
 #pragma UNEXPRESSED
@@ -52,7 +52,7 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
 void OutlinedFunction0(int OrkaParam0,int OrkaParam1,double *OrkaParam2,double *OrkaParam3,double *OrkaParam4)
 {
   
-#pragma HLS INLINE RECURSIVE
+#pragma HLS INLINE
 ;
   int param_pack_temp_variable0 = (int )OrkaParam0;
   int param_pack_temp_variable1 = (int )OrkaParam1;

@@ -20,7 +20,7 @@ void mov_dat(int *from,int *to)
 void sort(int *array)
 {
   
-#pragma HLS INLINE RECURSIVE
+#pragma HLS INLINE
   char change = (char )1;
   int buf1[10000];
   int buf2[10000];
@@ -48,7 +48,7 @@ void sort(int *array)
 void OutlinedFunction0(int *OrkaParam0)
 {
   
-#pragma HLS INLINE RECURSIVE
+#pragma HLS INLINE
 ;
   int *param_pack_temp_variable0 = (int *)OrkaParam0;
 {

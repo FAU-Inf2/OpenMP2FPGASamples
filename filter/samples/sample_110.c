@@ -12,7 +12,7 @@ int data_cache_hits = 0;
 int linearize(int x,int y,int bndx,int bndy)
 {
   
-#pragma HLS INLINE RECURSIVE
+#pragma HLS INLINE
   if (x >= bndx || y >= bndy) 
     return - 1;
   return bndy * x + y;
@@ -21,7 +21,7 @@ int linearize(int x,int y,int bndx,int bndy)
 void apply_filter(double *kernel,double *data,double *result,const int N,const int M)
 {
   
-#pragma HLS INLINE RECURSIVE
+#pragma HLS INLINE
   for (int x = 0; x < N; x++) {
     
 #pragma UNEXPRESSED

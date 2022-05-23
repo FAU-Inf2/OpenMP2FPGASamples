@@ -27,12 +27,12 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
 #pragma UNEXPRESSED
     for (int y = 0; y < N; y++) {
       
-#pragma HLS PIPELINE II=15 enable_flush rewind
+#pragma HLS PIPELINE II=15  rewind
       double weightsum = (double )0;
       double sum = (double )0;
       for (int i = 0; i < M; i++) {
         
-#pragma HLS PIPELINE II=4 enable_flush rewind
+#pragma HLS PIPELINE II=4  rewind
         for (int j = 0; j < M; j++) {
           
 #pragma UNEXPRESSED

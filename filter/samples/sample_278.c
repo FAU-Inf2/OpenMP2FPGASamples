@@ -32,10 +32,10 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
       double sum = (double )0;
       for (int i = 0; i < M; i++) {
         
-#pragma HLS PIPELINE II=14 enable_flush rewind
+#pragma HLS PIPELINE II=14  rewind
         for (int j = 0; j < M; j++) {
           
-#pragma HLS PIPELINE II=17 enable_flush
+#pragma HLS PIPELINE II=17 
           double weight = kernel[linearize(i,j,M,M)];
           int target = linearize(x + i,y + j,N,N);
           if (target < 0) 

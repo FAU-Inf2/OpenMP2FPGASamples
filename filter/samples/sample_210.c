@@ -12,7 +12,7 @@ int data_cache_hits = 0;
 int linearize(int x,int y,int bndx,int bndy)
 {
   
-#pragma HLS INLINE RECURSIVE
+#pragma HLS INLINE
   if (x >= bndx || y >= bndy) 
     return - 1;
   return bndy * x + y;
@@ -52,7 +52,7 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
 void OutlinedFunction0(int OrkaParam0,int OrkaParam1,double *OrkaParam2,double *OrkaParam3,double *OrkaParam4)
 {
   
-#pragma HLS INLINE RECURSIVE
+#pragma HLS INLINE
 ;
   int param_pack_temp_variable0 = (int )OrkaParam0;
   int param_pack_temp_variable1 = (int )OrkaParam1;

@@ -24,7 +24,7 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
 #pragma UNEXPRESSED
   for (int x = 0; x < N; x++) {
     
-#pragma HLS PIPELINE II=18 enable_flush
+#pragma HLS PIPELINE II=18 
     for (int y = 0; y < N; y++) {
       
 #pragma UNEXPRESSED

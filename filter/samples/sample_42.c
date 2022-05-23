@@ -24,7 +24,7 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
 #pragma UNEXPRESSED
   for (int x = 0; x < N; x++) {
     
-#pragma HLS PIPELINE II=9 enable_flush
+#pragma HLS PIPELINE II=9 
     for (int y = 0; y < N; y++) {
       
 #pragma UNEXPRESSED
@@ -35,7 +35,7 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
 #pragma HLS UNROLL factor=2
         for (int j = 0; j < M; j++) {
           
-#pragma HLS PIPELINE II=7 enable_flush rewind
+#pragma HLS PIPELINE II=7  rewind
           double weight = kernel[linearize(i,j,M,M)];
           int target = linearize(x + i,y + j,N,N);
           if (target < 0) 

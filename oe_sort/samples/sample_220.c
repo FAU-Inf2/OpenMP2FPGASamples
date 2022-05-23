@@ -9,7 +9,7 @@
 void mov_dat(int *from,int *to)
 {
   
-#pragma HLS INLINE RECURSIVE
+#pragma HLS INLINE
   for (int i = 0; i < 10000; i++) {
     
 #pragma UNEXPRESSED
@@ -20,7 +20,7 @@ void mov_dat(int *from,int *to)
 void sort(int *array)
 {
   
-#pragma HLS INLINE RECURSIVE
+#pragma HLS INLINE
   char change = (char )1;
   int buf1[10000];
   int buf2[10000];

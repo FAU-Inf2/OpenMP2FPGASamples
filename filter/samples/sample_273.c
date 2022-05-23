@@ -24,15 +24,15 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
 #pragma HLS INLINE REGION
   for (int x = 0; x < N; x++) {
     
-#pragma HLS PIPELINE II=30 enable_flush
+#pragma HLS PIPELINE II=30 
     for (int y = 0; y < N; y++) {
       
-#pragma HLS PIPELINE II=21 enable_flush
+#pragma HLS PIPELINE II=21 
       double weightsum = (double )0;
       double sum = (double )0;
       for (int i = 0; i < M; i++) {
         
-#pragma HLS PIPELINE II=20 enable_flush
+#pragma HLS PIPELINE II=20 
         for (int j = 0; j < M; j++) {
           
 #pragma HLS UNROLL factor=1

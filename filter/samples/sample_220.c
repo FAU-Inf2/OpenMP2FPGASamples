@@ -12,7 +12,7 @@ int data_cache_hits = 0;
 int linearize(int x,int y,int bndx,int bndy)
 {
   
-#pragma HLS INLINE RECURSIVE
+#pragma HLS INLINE
   if (x >= bndx || y >= bndy) 
     return - 1;
   return bndy * x + y;
@@ -32,7 +32,7 @@ void apply_filter(double *kernel,double *data,double *result,const int N,const i
       double sum = (double )0;
       for (int i = 0; i < M; i++) {
         
-#pragma HLS PIPELINE II=9 enable_flush rewind
+#pragma HLS PIPELINE II=9  rewind
         for (int j = 0; j < M; j++) {
           
 #pragma UNEXPRESSED
